@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% block title %}Dropdown Menu{% endblock %}
+{% block content %}
+
+
+<form action="/madlib-v2?">
+    Choose a story:
+    <select name="story_title">
+        {% for story in stories %}
+        <option value="{{story.title}}">{{story.title}}</option>
+        {% endfor %}
+    </select>
+    <button>Select Story!</button>
+</form>
+
+{% endblock %}

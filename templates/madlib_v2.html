@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% block title %}Madlib V2{% endblock %}
+{% block content %}
+
+<h1>Madlib V2 for {{story_title}} </h1>
+<form action="/story_v2" id="story_form">
+    {% for word in words %}
+    <p>
+        {{word}}:
+        <input name="{{word}}">
+    </p>
+    {% endfor %}
+    <input type="hidden" name="story_title" value="{{ story_title}}">
+    <button>Submit!</button>
+
+</form>
+{% endblock %}
